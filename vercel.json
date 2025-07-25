@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "buildCommand": "deno task build",
-  "outputDirectory": "_site",
-  "framework": null,
-  "cleanUrls": true,
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/$1" }
+  "builds": [
+    {
+      "src": "vercel-build.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/_site/$1" }
   ]
 }
