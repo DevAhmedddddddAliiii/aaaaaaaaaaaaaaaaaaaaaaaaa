@@ -6,7 +6,11 @@
       "use": "@vercel/node"
     }
   ],
+  "outputDirectory": "_site",
   "routes": [
-    { "src": "/(.*)", "dest": "/_site/$1" }
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
   ]
 }
