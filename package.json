@@ -1,0 +1,13 @@
+{
+  "name": "web-portfolio",
+  "version": "1.0.0",
+  "description": "Protected web portfolio",
+  "scripts": {
+    "build": "deno task build",
+    "dev": "deno task serve"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
+
