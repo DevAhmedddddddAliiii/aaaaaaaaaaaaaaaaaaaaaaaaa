@@ -1,21 +1,12 @@
 const { execSync } = require("child_process");
-const os = require("os");
-const path = require("path");
 
-function run(cmd) {
-  console.log(`Running: ${cmd}`);
-  execSync(cmd, { stdio: "inherit" });
-}
+console.log("📦 Installing Deno...");
+execSync("curl -fsSL https://deno.land/install.sh | sh", { stdio: "inherit" });
 
-async function main() {
-  const denoDir = path.join(process.cwd(), ".deno");
-  const denoBin = path.join(denoDir, "deno");
-  run(`curl -fsSL https://deno.land/install.sh | sh`);
-  process.env.PATH += `:${denoDir}`;
-  run(`.deno/bin/deno task build`);
-}
+const home = process.env.HOME || process.env.USERPROFILE;
+const denoPath = `${home}/.deno/bin`;
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+process.env.PATH = `${denoPath}:${process.env.PATH}`;
+
+console.log("🏗️ Building site with Deno...");
+execSync("~/.deno/bin/deno task build", { stdio: "inherit" });
