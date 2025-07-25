@@ -1,10 +1,1 @@
-{
-  "buildCommand": "/vercel/.deno/bin/deno task build",
-  "outputDirectory": "_site",
-  "installCommand": "curl -fsSL https://deno.land/install.sh | sh",
-  "devCommand": "/vercel/.deno/bin/deno task serve",
-  "framework": null,
-  "env": {
-    "PATH": "${PATH}:/vercel/.deno/bin"
-  }
-}
+
